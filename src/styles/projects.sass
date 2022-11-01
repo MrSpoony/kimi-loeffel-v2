@@ -1,6 +1,8 @@
 $foreground-color: #f1f5f9
 $bg-color: rgb(20, 20, 20)
-$project-color: rgb(23, 23, 23)
+$project-color: #111827 // #0F172A
+$white: rgb(255, 255, 255)
+$image-height: 5em
 
 .projects
   min-height: 100vh
@@ -17,8 +19,8 @@ $project-color: rgb(23, 23, 23)
       padding: 1em
       width: 20em
       height: 18em
-      background-color: rgba(255, 255, 255, 0.1)
-      border-radius: 10px
+      background-color: rgba($white, 0.1)
+      border-radius: 1em
       display: flex
       flex-direction: column
       align-items: center
@@ -26,49 +28,58 @@ $project-color: rgb(23, 23, 23)
       cursor: pointer
 
       .content
+        text-decoration: none
         background-color: $project-color
         border-radius: inherit
         display: flex
         flex-direction: column
         flex-grow: 1
-        inset: 1px
+        inset: 0.1em
         padding: 10px
         position: absolute
         z-index: 2
 
-      .img
-        box-sizing: border-box
-        width: 5em
-        height: 5em
-        padding: 0.2em
+      .image
+        width: 100%
+        height: $image-height
+        display: flex
+        justify-content: center
 
-        img
-          width: 100%
+        .img
+          box-sizing: border-box
+          width: 5em
           height: 100%
+          padding: 0.2em
+
+          img
+            filter: grayscale(70%)
+            width: 100%
+            height: 100%
+
+    .project::before,
+    .project::after
+      position: absolute
+      left: 0px
+      top: 0px
+      width: 100%
+      height: 100%
+      opacity: 0
+      border-radius: inherit
+      content: ""
+      transition: opacity 500ms
+
+    .project::before
+      background: radial-gradient(1000px circle at var(--mouse-x) var(--mouse-y), rgba($white, 0.1), transparent 40%)
+      z-index: 3
+
+    .project::after
+      background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba($white, 0.4), transparent 80%)
+      z-index: 1
+
     
     .project::after
       opacity: 1
 
     .project:hover::before
       opacity: 1
-
-    .project::before,
-    .project::after
-      border-radius: inherit
-      content: ""
-      height: 100%
-      left: 0px
-      opacity: 0
-      position: absolute
-      top: 0px
-      transition: opacity 500ms
-      width: 100%
-
-    .project::before
-      background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%)
-      z-index: 3
-
-    .project::after
-      background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.4), transparent 40%)
-      z-index: 1
 

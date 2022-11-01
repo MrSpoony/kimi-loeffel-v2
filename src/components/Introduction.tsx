@@ -3,7 +3,7 @@ export default function Introduction() {
     <section className="intro">
       <desc>Hi, my name is</desc>
       <h1>Kimi Löffel</h1>
-      <h1>I like programing</h1>
+      <h2>I like programing</h2>
     </section>
   );
 }
