@@ -4,7 +4,7 @@ export default function Header() {
       <nav>
         <li><a href="#about-me">About me</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li>Contact</li>
+        <li><a href="#contact">Contact</a></li>
       </nav>
     </header>
   )

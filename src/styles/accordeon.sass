@@ -42,18 +42,21 @@ $progress-foreground: #4338ca
         .progress-#{$i}
           width: $width
 
+    .first-part
+      display: flex
+      align-items: center
 
-    .icon
-      width: 2em
-      height: 2em
-      transition: all 0.2s ease
-      padding: 0 1em
+      .icon
+        width: 2em
+        height: 2em
+        transition: all 0.2s ease
+        padding: 0 1em
 
-    .icon-open
-      transform: rotate(-90deg)
+      .icon-open
+        transform: rotate(-90deg)
 
-    .icon-close
-      transform: rotate(90deg)
+      .icon-close
+        transform: rotate(90deg)
 
-    .inlineTitle
-      display: inline-block
+      .inlineTitle
+        display: inline-block

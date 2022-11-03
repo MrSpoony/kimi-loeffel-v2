@@ -5,19 +5,19 @@ $white: rgb(255, 255, 255)
 $image-height: 5em
 
 .projects
-  min-height: 100vh
-
   .cards
+    margin: 10em 0
     display: flex
-    justify-content: center
+    justify-content: space-between
     flex-wrap: wrap
     gap: 0.5em
     --mouse-x: 10px
     --mouse-y: 10px
 
     .project
+      flex: 1
+      min-width: 20em
       padding: 1em
-      width: 20em
       height: 18em
       background-color: rgba($white, 0.1)
       border-radius: 1em

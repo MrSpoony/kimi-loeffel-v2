@@ -1,0 +1,83 @@
+$background-color: #0F172A !global
+$foreground-color: #f1f5f9 !global
+
+.contact
+  height: 100vh
+
+  form
+    width: 100%
+
+    .label-focused
+      top: -1.125rem
+      left: 1em
+      color: #1a73e8
+      font-size: 0.75rem
+      background-color: $background-color
+      height: 1em
+      padding-left: 0.5em
+      padding-right: 0.5em
+
+    .input-focused
+      outline: none
+      border: 0.2em solid #1a73e8
+
+    .inputBox
+      position: relative
+      input, textarea
+        width: 100%
+        padding: 1.3rem 1em
+        font-size: 1rem
+        letter-spacing: 0.062rem
+        margin-bottom: 1.875rem
+        border: 0.1em solid #ccc
+        background: transparent
+        border-radius: 0.4em
+        color: $foreground-color
+
+      label
+        position: absolute
+        top: 0
+        left: 1em
+        padding: 0.625rem 0
+        font-size: 1.5rem
+        color: $foreground-color
+        pointer-events: none
+        transition: 0.5s
+
+
+      textarea
+        font-family: inherit
+
+        &:focus ~ label, &:valid ~ label, &:not(:empty) ~ label
+          @extend .label-focused
+
+        &:focus
+          @extend .input-focused
+
+      input
+
+        &:focus ~ label, &:valid ~ label, &:not([value=""]) ~ label
+          @extend .label-focused
+
+        &:focus
+          @extend .input-focused
+
+    .submitBtn
+      width: 100%
+      display: flex
+      justify-content: flex-end
+
+      input[type="submit"]
+        border: none
+        outline: none
+        color: $background-color
+        background-color: $foreground-color
+        padding: 0.625rem 1.25rem
+        cursor: pointer
+        border-radius: 0.312rem
+        font-size: 1rem
+
+        &:hover
+          background-color: $background-color
+          color: $foreground-color
+          box-shadow: 0 0.1em 0.1em 0 rgba(66, 133, 244, 0.45), 0 0.1em 0.3em 0.1em rgba(66, 133, 244, 0.3)

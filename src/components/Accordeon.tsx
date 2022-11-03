@@ -16,16 +16,15 @@ export default function Accordeon({
   const progressBar = useRef(null);
   let observer: IntersectionObserver | undefined = undefined;
   if (typeof window != typeof undefined) {
-  observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.add("show");
-      }
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.add("show");
+        }
+      });
     });
-  });
   }
 
   useEffect(() => {
@@ -37,10 +36,12 @@ export default function Accordeon({
   return (
     <div className="accordeon">
       <a className="open-close" onClick={() => setIsOpen(!isOpen)}>
-        <h4 className="inlineTitle">{title}</h4>
-        <MdOutlineArrowBackIosNew
-          className={`icon icon-${isOpen ? "close" : "open"}`}
-        />
+        <div className="first-part">
+          <h4 className="inlineTitle">{title}</h4>
+          <MdOutlineArrowBackIosNew
+            className={`icon icon-${isOpen ? "close" : "open"}`}
+          />
+        </div>
         {progress && (
           <div className="full-bar">
             <div
