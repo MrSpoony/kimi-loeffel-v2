@@ -10,18 +10,18 @@ export default function Project({
   link: string;
 }) {
   return (
-    <article className="project" >
-      <a className="content" href={link}>
+    <a className="project" href={link} target="_blank" rel="noreferrer">
+      <div className="content">
         <div className="image">
-        <div className="img">
-          <picture>
-            <img src={image} alt={`Image of ${title}`} />
-          </picture>
+          <div className="img">
+            <picture>
+              <img src={image} alt={`Image of a ${title}`} />
+            </picture>
+          </div>
         </div>
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </a>
-    </article >
+    </a >
   );
 }

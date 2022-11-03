@@ -5,12 +5,9 @@ header
   position: sticky
   top: 0
   background-color: $background-color
-  padding: 0 2em
-  z-index: 3
+  z-index: 4
 
-  nav
-    max-width: 70em
-    margin: 0 auto
+  menu
     display: flex
     flex-direction: row
     justify-content: flex-end
@@ -22,7 +19,10 @@ header
     li
       height: 100%
       list-style-type: none
-      margin: auto 0 auto 2em
+      @media screen and (min-width: 250px)
+        margin: auto 0 auto 2em
+      @media screen and (max-width: 250px)
+        margin: auto 0 auto 0.5em
       display: flex
       align-items: center
 

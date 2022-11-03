@@ -1,13 +1,14 @@
+import { ReactNode } from "react";
 import Accordeon from "./Accordeon";
 
 export default function Topic({
   title,
   image,
-  text,
+  children,
 }: {
   title: string;
   image: string;
-  text: string;
+  children: ReactNode;
 }) {
-  return <Accordeon title={title} image={image} text={text} />;
+  return <Accordeon title={title} image={image}>{children}</Accordeon>;
 }

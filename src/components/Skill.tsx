@@ -1,15 +1,16 @@
+import { ReactNode } from "react";
 import Accordeon from "./Accordeon";
 
 export default function Skill({
   title,
   image,
-  text,
   skillLevel,
+  children,
 }: {
   title: string;
   image: string;
-  text: string;
   skillLevel: number;
+  children: ReactNode;
 }) {
-  return <Accordeon title={title} image={image} text={text} progress={skillLevel} />;
+  return <Accordeon title={title} image={image} progress={skillLevel}>{children}</Accordeon>;
 }

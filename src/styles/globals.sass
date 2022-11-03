@@ -11,13 +11,24 @@ html
   scroll-behavior: smooth
 
 
-main
-  padding: 0 2em
+body
+  @media screen and (min-width:400px)
+    padding: 0 3em
+  @media screen and (max-width:400px)
+    padding: 0 0.5em
+
+menu
+  padding-inline: 0
 
 section
-  padding-top: 4em
+  padding-top: 10em
+
+h2
+  margin: 3em 0
+
+section, header > menu
+  max-width: 60em
   margin: 0 auto
-  max-width: 70em
 
 p
   text-align: justify

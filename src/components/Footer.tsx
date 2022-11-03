@@ -9,11 +9,13 @@ export default function Footer() {
         <li><a href="https://www.worldcubeassociation.org/persons/2021LOFF01" target="_blank" rel="noreferrer"><i></i></a></li>
       </menu>
       <menu className="important">
+        <li>|</li>
         <li><a href="#top">Home</a></li>
         <li>|</li>
         <li><a href="#about-me">About me</a></li>
         <li>|</li>
         <li><a href="#contact">Contact</a></li>
+        <li>|</li>
       </menu>
       <p className="copyright">
         Kimi Löffel © 2022

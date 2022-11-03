@@ -8,7 +8,7 @@ import "../styles/contact.sass";
 import "../styles/accordeon.sass";
 import type { AppProps as NextAppProps } from "next/app";
 
-// modified version - allows for custom pageProps type, falling back to 'any'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AppProps<P = any> = {
   pageProps: P;
 } & Omit<NextAppProps<P>, "pageProps">;

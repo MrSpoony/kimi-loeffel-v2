@@ -8,13 +8,12 @@ const spotifyApi = new SpotifyWebApi({
   clientSecret: process.env.SPOTIFY_SECRET,
 });
 
-(async () => {
-  const x = await spotifyApi.refreshAccessToken();
-  console.log(x.body)
-})()
-
 export default async function spotify(_: NextApiRequest, res: NextApiResponse) {
+  const x = await spotifyApi.refreshAccessToken();
+  spotifyApi.setAccessToken(x.body.access_token);
+  spotifyApi.setRefreshToken(x.body.refresh_token || process.env.SPOTIFY_REFRESH_TOKEN || "");
   spotifyApi.getMyCurrentPlayingTrack().then(data => {
+    console.log(data);
     res.status(200).json({
       is_playing: data.body.is_playing,
       song: data.body.item?.name,

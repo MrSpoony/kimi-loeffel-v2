@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 export default function Accordeon({
   title,
   image,
-  text,
   progress,
+  children,
 }: {
   title: string;
   image: string;
-  text: string;
   progress?: number;
+  children: ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const progressBar = useRef(null);
@@ -37,10 +37,10 @@ export default function Accordeon({
     <div className="accordeon">
       <a className="open-close" onClick={() => setIsOpen(!isOpen)}>
         <div className="first-part">
-          <h4 className="inlineTitle">{title}</h4>
           <MdOutlineArrowBackIosNew
             className={`icon icon-${isOpen ? "close" : "open"}`}
           />
+          <h4 className="inlineTitle">{title}</h4>
         </div>
         {progress && (
           <div className="full-bar">
@@ -56,10 +56,10 @@ export default function Accordeon({
           <div className="content">
             <div className="img">
               <picture>
-                <img src={image} alt={`Image of ${title}`} />
+                <img src={image} alt={`Image of a ${title}`} />
               </picture>
             </div>
-            <p>{text}</p>
+            {children}
           </div>
         </>
       )}

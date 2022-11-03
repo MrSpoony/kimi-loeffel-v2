@@ -14,7 +14,7 @@ export default function Contact() {
   }
 
   return (<section className="contact" id="contact">
-    <h1>Get in touch</h1>
+    <h2>Get in touch</h2>
     <form onSubmit={submitForm}>
       <div className="inputBox">
         <input
