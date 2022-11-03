@@ -1,0 +1,76 @@
+$background-color: #0F172A !global
+$foreground-color: #f1f5f9 !global
+
+@font-face
+    font-family: "Hack Nerd Font Mono"
+    src: url("/fonts/Hack-Italic-Nerd-Font-Complete-Mono.woff")
+
+@media screen and (max-width: 614px)
+  footer
+    --icon-size:8vw
+    --icon-border:9vw
+
+@media screen and (min-width: 614px)
+  footer
+    --icon-size:5vh
+    --icon-border:6vh
+
+.content-wrap
+  padding-bottom: 15em
+
+i
+  font-size: var(--icon-size)
+  font-family: "Hack Nerd Font Mono"
+  font-style: normal
+
+  &:hover
+    color: $background-color
+
+.social a
+  text-decoration: none
+  display: flex
+  align-items: center
+  justify-content: center
+  width: var(--icon-border)
+  height: var(--icon-border)
+  border: 0.1em solid $foreground-color
+  border-radius: 100%
+
+  &:hover
+    background-color: $foreground-color
+
+footer
+  width: 100vw
+  height: auto
+  background-color: $background-color
+  color: $foreground-color
+
+  .social
+    max-width: 700px
+    margin: 0 auto
+    padding: 0 var(--side-offset)
+    padding-top: 2em
+    display: flex
+    align-items: center
+    justify-content: space-between
+    list-style: none
+
+  .important
+    max-width: 700px
+    margin: 0 auto
+    list-style: none
+    text-align: center
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin: 1em auto
+    padding: 0 var(--side-offset)
+
+  li a
+    text-decoration: none
+
+.copyright
+  color: $foreground-color
+  padding-bottom: 1em
+  font-size: 0.8em
+  text-align: center
