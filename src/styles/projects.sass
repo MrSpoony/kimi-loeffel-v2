@@ -78,6 +78,8 @@ $image-height: 5em
       border-radius: inherit
       content: ""
       transition: opacity 500ms
+      @media prefers-reduced-motion
+        transition: none
 
     .project::before
       background: radial-gradient(1000px circle at var(--mouse-x) var(--mouse-y), rgba($white, 0.1), transparent 40%)

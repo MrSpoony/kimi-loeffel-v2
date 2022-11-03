@@ -13,16 +13,16 @@ export default async function spotify(_: NextApiRequest, res: NextApiResponse) {
   spotifyApi.setAccessToken(x.body.access_token);
   spotifyApi.setRefreshToken(x.body.refresh_token || process.env.SPOTIFY_REFRESH_TOKEN || "");
   spotifyApi.getMyCurrentPlayingTrack().then(data => {
-    console.log(data);
-    res.status(200).json({
-      is_playing: data.body.is_playing,
-      song: data.body.item?.name,
-      album: (data.body.item as SpotifyApi.TrackObjectFull).album?.name,
-      artists: (data.body.item as SpotifyApi.TrackObjectFull).album.artists.map(a => a?.name),
-      image: (data.body.item as SpotifyApi.TrackObjectFull).album.images?.[0]?.url,
-    })
+    const is_playing = data.body.is_playing;
+    if (!is_playing) return res.status(200).json({ is_playing });
+    const song = data.body.item?.name;
+    const album = (data.body.item as SpotifyApi.TrackObjectFull).album?.name;
+    const artists = (data.body.item as SpotifyApi.TrackObjectFull).album.artists.map(a => a?.name);
+    const image = (data.body.item as SpotifyApi.TrackObjectFull).album.images?.[0]?.url;
+    const info = { is_playing, song, album, artists, image };
+    return res.status(200).json(info)
   }, err => {
     console.error(err)
-   res.status(500).json({message: "Could not load the song"})
+    return res.status(500).json({ message: "Could not load the song" })
   })
 }

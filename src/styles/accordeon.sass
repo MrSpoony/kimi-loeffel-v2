@@ -1,5 +1,5 @@
-$progress-background: #cbd5e1
-$progress-foreground: #4338ca
+$accent-background: #cbd5e1
+$accent-foreground: #4338ca
 
 .accordeon 
 
@@ -28,11 +28,11 @@ $progress-foreground: #4338ca
     .full-bar
       width: 100%
       height: 1em
-      background-color: $progress-background
+      background-color: $accent-background
       border-radius: 100em
 
       .bar
-        background-color: $progress-foreground
+        background-color: $accent-foreground
         height: 100%
         border-radius: 100em
 
@@ -49,7 +49,9 @@ $progress-foreground: #4338ca
       .icon
         width: 2em
         height: 2em
-        transition: all 0.2s ease
+        transition: transform 0.2s ease
+        @media prefers-reduced-motion
+          transition: none
         padding: 0 1em
 
       .icon-open

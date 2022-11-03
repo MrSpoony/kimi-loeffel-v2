@@ -1,5 +1,6 @@
 $background-color: #0F172A !global
 $foreground-color: #f1f5f9 !global
+$accent-foreground: #4338ca
 
 @font-face
     font-family: "Hack Nerd Font Mono"
@@ -23,9 +24,6 @@ i
   font-family: "Hack Nerd Font Mono"
   font-style: normal
 
-  &:hover
-    color: $background-color
-
 .social a
   text-decoration: none
   display: flex
@@ -38,6 +36,8 @@ i
 
   &:hover
     background-color: $foreground-color
+    color: $background-color
+    box-shadow: 0 0.5em 0.5em 0 rgba($accent-foreground, 0.45), 0 0.5em 1.5em 0.5em rgba($accent-foreground, 0.3)
 
 footer
   height: auto

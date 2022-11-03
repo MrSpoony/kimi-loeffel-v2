@@ -33,7 +33,8 @@ export default function Contact() {
           required
           onChange={e => setText(e.target.value)}
           rows={10}
-        >{text}</textarea>
+          defaultValue={text}
+        />
         <label>Message</label>
       </div>
 
