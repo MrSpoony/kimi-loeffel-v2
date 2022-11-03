@@ -6,7 +6,13 @@ $foreground-color: #f1f5f9 !global
   flex-direction: column
   justify-content: center
   align-items: flex-start
-  padding-left: 10em
+
+  @media screen and (min-width: 650px)
+    padding-left: 10em
+  @media screen and (max-width: 650px) and (min-width: 400px)
+    padding-left: 4em
+  @media screen and (max-width: 400px)
+    padding-left: 2em
 
   .desc
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
