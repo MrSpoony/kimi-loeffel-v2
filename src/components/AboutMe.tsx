@@ -74,6 +74,16 @@ export default function AboutMe() {
         some telematics, operating systems, project management and much more.
         I am currently taking my apprenticeship at the FOITT as a computer scientist.
       </Topic>
+      <Topic
+        title="Sports"
+        image="/topics/sports.png"
+      >
+        I joined the gymnastics club Zollikofen in 2012.
+        In my first few year I was in the &quot;Jugi&quot;.
+        After a few years I switched to the athletics training
+        in which I train today.
+        I went to many competitions and also won some of them.
+      </Topic>
 
       <h3>Skills</h3>
       <Skill
