@@ -27,9 +27,11 @@ export default async function spotify(_: NextApiRequest, res: NextApiResponse) {
   const is_playing = data.body.is_playing;
   if (!is_playing) return res.status(200).json({ is_playing: false });
   const song = data.body.item?.name;
-  const album = (data.body.item as SpotifyApi.TrackObjectFull).album?.name;
-  const artists = (data.body.item as SpotifyApi.TrackObjectFull).album.artists.map(a => a?.name);
-  const image = (data.body.item as SpotifyApi.TrackObjectFull).album.images?.[0]?.url;
+  const episode = (data.body.item as SpotifyApi.EpisodeObject)
+  const track = (data.body.item as SpotifyApi.TrackObjectFull)
+  const album: string = track?.album?.name || episode?.show?.name;
+  const artists: string[] = track?.album.artists.map(a => a?.name) || [episode?.show?.publisher];
+  const image: string = track?.album.images?.[0]?.url || episode?.images?.[0]?.url || "";
   const info = { is_playing, song, album, artists, image };
   return res.status(200).json(info)
 }
