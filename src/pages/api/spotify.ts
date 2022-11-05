@@ -20,7 +20,6 @@ export default async function spotify(_: NextApiRequest, res: NextApiResponse) {
   let data;
   try {
     data = await spotifyApi.getMyCurrentPlayingTrack()
-    console.log(data.body)
   } catch (e) {
     console.error(e);
     return res.status(500).json({ message: "Could not load the song" })
