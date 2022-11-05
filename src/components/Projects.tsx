@@ -44,7 +44,7 @@ export default function Projects() {
           title="grade-tracker"
           link="https://github.com/MrSpoony/grade-tracker"
           image="/projects/grade.png"
-          description="the grader is my own attempt at a grading system where you can upload your code to a CP problem and it validates your outputs."
+          description="the grade-tracker is a program we created to track our grades in school"
         />
         <Project
           title="dadjoke-dcBot"
