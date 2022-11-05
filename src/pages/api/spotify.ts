@@ -20,11 +20,12 @@ export default async function spotify(_: NextApiRequest, res: NextApiResponse) {
   let data;
   try {
     data = await spotifyApi.getMyCurrentPlayingTrack()
+    console.log(data.body)
   } catch (e) {
     console.error(e);
     return res.status(500).json({ message: "Could not load the song" })
   }
-  const is_playing = data.body.is_playing;
+  const is_playing = data.body.is_playing && data.body.item !== null;
   if (!is_playing) return res.status(200).json({ is_playing: false });
   const song = data.body.item?.name;
   const episode = (data.body.item as SpotifyApi.EpisodeObject)
