@@ -1,5 +1,4 @@
-import Skill from "./Skill";
-import Topic from "./Topic";
+import Accordeon from "./Accordeon";
 import { useEffect, useState } from "react";
 
 const notListeningText = "I'm currently not listenting to something on spotify";
@@ -37,7 +36,7 @@ export default function AboutMe() {
         I also like cubing, athletics and playing the guitar.
       </p>
       <h3>Topics</h3>
-      <Topic
+      <Accordeon
         title="Cube"
         image="/topics/rubiks-cube.png"
       >
@@ -50,8 +49,8 @@ export default function AboutMe() {
         on how to solve it faster.
         Afetr I bought myself a faster cube I started with speedcubing.
         I already went to some competitions and my official fastest time to solve a Rubik&apos;s cube is 12.11 seconds.
-      </Topic>
-      <Topic
+      </Accordeon>
+      <Accordeon
         title="Coding"
         image="/topics/coding.jpeg"
       >
@@ -73,8 +72,8 @@ export default function AboutMe() {
         We learned about databases, backend, frontend, mobile development,
         some telematics, operating systems, project management and much more.
         I am currently taking my apprenticeship at the FOITT as a computer scientist.
-      </Topic>
-      <Topic
+      </Accordeon>
+      <Accordeon
         title="Sports"
         image="/topics/sports.png"
       >
@@ -83,13 +82,13 @@ export default function AboutMe() {
         After a few years I switched to the athletics training
         in which I train today.
         I went to many competitions and also won some of them.
-      </Topic>
+      </Accordeon>
 
       <h3>Skills</h3>
-      <Skill
+      <Accordeon
         title="Neovim"
         image="/topics/neovim.png"
-        skillLevel={0.9}
+        progress={0.9}
       >
         I started using Vim Movements in 2021.
         I started with the Vim emulations in my favourite Editors then.
@@ -103,11 +102,11 @@ export default function AboutMe() {
         to configure your personal development environment.
         I configured Neovim and now I use it for almost everything
         related to coding or writing text.
-      </Skill>
-      <Skill
+      </Accordeon>
+      <Accordeon
         title="Competitive Programming"
         image="/topics/soi.png"
-        skillLevel={0.5}
+        progress={0.5}
       >
         I first came in contact with CP in 2021.
         Lionel Mueller participated in the Swiss Olympiad in informatics
@@ -118,15 +117,15 @@ export default function AboutMe() {
         But there is still much to learn for me.
         I only scratched the surface in my first year.
         I hope I can improve my skills in CP this and the following years.
-      </Skill>
+      </Accordeon>
 
       <h3>Nice to know</h3>
-      <Topic
+      <Accordeon
         title="Spotify status"
         image={image || "/spotify/placeholder.png"}
       >
         {!isListening ? notListeningText : `I'm currently listening to the song '${song || "Loading..."}' from the album '${album || "Loading..."}' from the artist${artists.length > 1 ? "s" : ""} ${artists.join(", ") || "Loading"}`}
-      </Topic>
+      </Accordeon>
     </section>
   );
 }
