@@ -25,9 +25,7 @@ export default function Accordeon({
         </div>
         {progress && (
           <div className="full-bar">
-            <div
-              className={`bar progress-${Math.round(progress * 100)}`}
-            ></div>
+            <div className={`bar progress-${Math.round(progress * 100)}`}></div>
           </div>
         )}
       </a>

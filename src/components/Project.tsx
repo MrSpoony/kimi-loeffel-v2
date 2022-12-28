@@ -2,7 +2,7 @@ export default function Project({
   title,
   description,
   image,
-  link
+  link,
 }: {
   title: string;
   description: string;
@@ -22,6 +22,6 @@ export default function Project({
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
-    </a >
+    </a>
   );
 }
