@@ -41,7 +41,8 @@ export default async function contact(
       res.status(200).json({ message: "Message sucessfully sent" });
       return;
     })
-    .catch(() => {
+    .catch(err => {
+      console.error(err);
       res.status(500).json({ message: "Message could not be sent" });
       return;
     });
