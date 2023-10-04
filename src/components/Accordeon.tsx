@@ -1,14 +1,18 @@
 import { ReactNode, useState } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export default function Accordeon({
   title,
   image,
+  icon,
   progress,
   children,
 }: {
   title: string;
-  image: string;
+  image?: string;
+  icon?: IconProp;
   progress?: number;
   children: ReactNode;
 }) {
@@ -32,11 +36,15 @@ export default function Accordeon({
       {isOpen && (
         <>
           <div className="content">
-            <div className="img">
-              <picture>
-                <img src={image} alt={`Image of a ${title}`} />
-              </picture>
-            </div>
+            {image == null ? (
+              icon != null && <FontAwesomeIcon className="img" icon={icon} />
+            ) : (
+              <div className="img">
+                <picture>
+                  <img src={image} alt={`Image of a ${title}`} />
+                </picture>
+              </div>
+            )}
             {children}
           </div>
         </>

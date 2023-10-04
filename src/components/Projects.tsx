@@ -2,11 +2,13 @@ import Project from "./Project";
 
 export default function Projects() {
   return (
-    <section className="projects" id="projects"
+    <section
+      className="projects"
+      id="projects"
       onMouseMove={(e) => {
         const cards = document.querySelectorAll(".project");
         for (const [, card] of Object.entries(cards)) {
-          const rect = card.getBoundingClientRect()
+          const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
           (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
@@ -54,5 +56,5 @@ export default function Projects() {
         />
       </div>
     </section>
-  )
+  );
 }

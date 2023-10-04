@@ -16,7 +16,7 @@ async function sendEmail(from: string, to: string, message: string) {
       subject: from + " | new message !",
       text: message || "The text could not be parsed",
     };
-    smtpTransport.sendMail(mailOptions, function(error, info) {
+    smtpTransport.sendMail(mailOptions, function (error, info) {
       if (error) {
         rej(error);
       } else {
@@ -41,7 +41,7 @@ export default async function contact(
       res.status(200).json({ message: "Message sucessfully sent" });
       return;
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
       res.status(500).json({ message: "Message could not be sent" });
       return;
