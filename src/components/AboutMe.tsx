@@ -25,14 +25,17 @@ export default function AboutMe() {
       <h3>Introduction</h3>
 
       <p>
+        {`
         Hi, I'm Kimi Loeffel and I really enjoy programming and everything
         that is realated with it. I also like cubing, athletics and playing the
         guitar.
+        `}
       </p>
 
       <h3>Topics</h3>
 
       <Accordeon title="Cube" icon={faCube}>
+        {`
         I solved my first Rubik's cube when I was around 7 year old. Back
         then I solved the cube with the simplest method that exists. I also did
         not know that there exists a whole community around cubing. I also did
@@ -42,9 +45,11 @@ export default function AboutMe() {
         faster cube I started with speedcubing. I already went to some
         competitions and my official fastest time to solve a Rubik's cube
         is 12.11 seconds.
+        `}
       </Accordeon>
 
       <Accordeon title="Coding" icon={faCode}>
+        {`
         I started coding when I was 11 year old. I started with Scratch. Later
         on I made some Apps with the MIT App Inventor. I also made some simple
         static websites with HTML, CSS and JS. After some more experience I
@@ -60,17 +65,20 @@ export default function AboutMe() {
         We learned about databases, backend, frontend, mobile development, some
         telematics, operating systems, project management and much more. I am
         currently taking my apprenticeship at the FOITT as a computer scientist.
+        `}
       </Accordeon>
 
       <Accordeon title="Sports" icon={faPersonRunning}>
+        {`
         I joined the gymnastics club Zollikofen in 2012. In my first few years I was in a polysportive group.
         After a few years I switched to the athletics training in which I still train today.
         I went to many competitions and also won some of them.
+        `}
 
         <br />
         <br />
 
-        <b>My current PR's</b>
+        <b>{`My current PR's`}</b>
 
         <table>
           <tr>
@@ -97,14 +105,15 @@ export default function AboutMe() {
       </Accordeon>
 
       <Accordeon title="Running" icon={faPersonRunning}>
+        {`
         I competed in my first runs when I was 2 years old (1min 27 for 200m).
         But I really started my journey in early 2023 when I picked up running
         and went running more often. Right now I run about 4-5 times a week.
-
+        `}
         <br />
         <br />
 
-        <b>My current PR's</b>
+        <b>{`My current PR's`}</b>
 
         <table>
           <tr>
@@ -129,6 +138,7 @@ export default function AboutMe() {
       <h3>Skills</h3>
 
       <Accordeon title="Neovim" image="/topics/neovim.png" progress={0.9}>
+        {`
         I started using Vim Movements in 2021. I started with the Vim emulations
         in my favourite Editors then. But only some short time later I switched
         to Arch Linux which made me love my own configurations of things.
@@ -139,6 +149,7 @@ export default function AboutMe() {
         can use to configure your personal development environment. I configured
         Neovim and now I use it for almost everything related to coding or
         writing text.
+        `}
       </Accordeon>
 
       <Accordeon
@@ -146,6 +157,7 @@ export default function AboutMe() {
         image="/topics/soi.png"
         progress={0.5}
       >
+        {`
         I first came in contact with CP in 2021. Lionel Mueller participated in
         the Swiss Olympiad in informatics and he asked me if I would like to
         participate too. And after I bearly made it into the SOI-Camp I really
@@ -153,6 +165,7 @@ export default function AboutMe() {
         even was able to use in productive code. But there is still much to
         learn for me. I only scratched the surface in my first year. I hope I
         can improve my skills in CP this and the following years.
+        `}
       </Accordeon>
 
       <h3>Nice to know</h3>
@@ -170,3 +183,5 @@ export default function AboutMe() {
     </section>
   );
 }
+
+

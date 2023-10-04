@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faGithubAlt, faLinkedinIn, faRedditAlien, faStrava } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithubAlt,
+  faLinkedinIn,
+  faRedditAlien,
+  faStrava,
+} from "@fortawesome/free-brands-svg-icons";
 import { faClock, faCube } from "@fortawesome/free-solid-svg-icons";
 
 function SocialItem({ url, icon }: { url: string; icon: IconProp }) {
